@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Library</title>
+<style>
+  :root {
+    --bg: #f5f4f1;
+    --surface: #ffffff;
+    --border: #e2e0da;
+    --border-strong: #c8c5bc;
+    --text: #1a1917;
+    --text-muted: #6b6860;
+    --text-faint: #9e9b94;
+    --accent: #2a5caa;
+    --accent-light: #e8eefc;
+    --danger: #c0392b;
+    --danger-light: #fdf0ee;
+    --radius: 8px;
+    --radius-sm: 5px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; font-size: 14px; line-height: 1.5; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Shell */
+  .shell { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+
+  /* Top bar */
+  .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; gap: 12px; flex-wrap: wrap; }
+  .topbar h1 { font-size: 18px; font-weight: 600; letter-spacing: -0.2px; color: var(--text); }
+  .topbar-right { display: flex; gap: 8px; align-items: center; }
+
+  /* Toolbar */
+  .toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; gap: 10px; }
+  .toolbar-count { font-size: 12px; color: var(--text-faint); }
+
+  /* View toggle */
+  .view-toggle { display: flex; background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); overflow: hidden; }
+  .view-toggle button { padding: 6px 14px; font-size: 12px; font-weight: 500; border: none; background: transparent; color: var(--text-muted); cursor: pointer; font-family: inherit; transition: background 0.1s, color 0.1s; }
+  .view-toggle button.active { background: var(--accent); color: #fff; }
+  .view-toggle button:not(.active):hover { background: var(--bg); color: var(--text); }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; gap: 5px; padding: 7px 14px; font-size: 13px; font-weight: 500; border-radius: var(--radius-sm); cursor: pointer; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); font-family: inherit; transition: background 0.1s; white-space: nowrap; }
+  .btn:hover { background: var(--bg); }
+  .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn-primary:hover { background: #204d96; border-color: #204d96; }
+  .btn-sm { padding: 4px 10px; font-size: 12px; }
+  .btn-danger { color: var(--danger); border-color: #e8b4ae; background: transparent; }
+  .btn-danger:hover { background: var(--danger-light); }
+
+  /* Config banner */
+  .config-banner { background: #fffbea; border: 1px solid #e8cc60; border-radius: var(--radius); padding: 12px 16px; margin-bottom: 20px; font-size: 13px; color: #6b5000; display: flex; gap: 10px; align-items: flex-start; }
+  .config-banner strong { color: #4a3800; }
+
+  /* Gallery */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; }
+  .gallery-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; cursor: pointer; box-shadow: var(--shadow); transition: border-color 0.12s, box-shadow 0.12s; }
+  .gallery-card:hover { border-color: var(--border-strong); box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
+  .card-thumb { width: 100%; height: 130px; object-fit: cover; display: block; background: var(--bg); }
+  .card-thumb-placeholder { width: 100%; height: 130px; background: var(--bg); display: flex; align-items: center; justify-content: center; }
+  .card-thumb-placeholder svg { opacity: 0.18; }
+  .card-body { padding: 12px 13px; }
+  .card-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .card-meta { font-size: 11px; color: var(--text-faint); margin-bottom: 6px; }
+  .card-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+  .tag { font-size: 11px; padding: 2px 7px; border-radius: 3px; border: 1px solid var(--border); color: var(--text-muted); display: inline-flex; align-items: center; gap: 3px; text-decoration: none; background: transparent; }
+  .tag:hover { background: var(--bg); text-decoration: none; color: var(--text); }
+  .tag-accent { background: var(--accent-light); border-color: #c0d0f0; color: var(--accent); }
+  .card-tags-row { display: flex; align-items: center; gap: 8px; margin-bottom: 0; }
+  .card-tags-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-faint); white-space: nowrap; flex-shrink: 0; }
+
+  /* Detail view */
+  .back-btn { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-faint); cursor: pointer; background: none; border: none; font-family: inherit; padding: 0; margin-bottom: 20px; letter-spacing: 0.2px; text-transform: uppercase; }
+  .back-btn:hover { color: var(--text-muted); }
+  .detail-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+  .detail-title { font-size: 20px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 6px; }
+  .detail-subtitle { font-size: 12px; color: var(--text-faint); margin-bottom: 8px; }
+  .detail-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .detail-actions { display: flex; gap: 6px; flex-shrink: 0; }
+  .cover-img { width: 100%; max-height: 240px; object-fit: cover; object-position: top; border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 24px; display: block; }
+  .cover-placeholder { width: 100%; height: 80px; border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 24px; background: var(--bg); display: flex; align-items: center; justify-content: center; }
+  .cover-placeholder svg { opacity: 0.15; }
+  .section-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .section-label { font-size: 11px; font-weight: 600; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.6px; }
+
+  /* Component rows */
+  .comp-list { display: flex; flex-direction: column; gap: 10px; }
+  .comp-row { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .comp-row-main { padding: 14px; }
+  .comp-thumb { width: 100%; height: 110px; object-fit: cover; object-position: top; border-radius: var(--radius-sm); border: 1px solid var(--border); display: block; background: var(--bg); margin-bottom: 12px; }
+  .comp-thumb-placeholder { width: 100%; height: 110px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+  .comp-thumb-placeholder svg { opacity: 0.15; }
+
+  /* Component info — clean table-like rows */
+  .comp-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; gap: 8px; }
+  .comp-name { font-size: 14px; font-weight: 600; }
+  .comp-project-ref { font-size: 11px; color: var(--text-faint); cursor: pointer; white-space: nowrap; }
+  .comp-project-ref:hover { color: var(--accent); text-decoration: underline; }
+  .comp-type-tag { display: inline-block; font-size: 11px; font-weight: 500; padding: 1px 7px; border-radius: 3px; background: var(--accent-light); color: var(--accent); border: 1px solid #c0d0f0; margin-bottom: 10px; }
+
+  .info-rows { display: flex; flex-direction: column; gap: 0; margin-bottom: 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+  .info-row { display: grid; grid-template-columns: 72px 1fr; font-size: 12px; border-bottom: 1px solid var(--border); }
+  .info-row:last-child { border-bottom: none; }
+  .info-key { padding: 6px 10px; background: var(--bg); color: var(--text-faint); font-size: 11px; display: flex; align-items: center; }
+  .info-val { padding: 6px 10px; color: var(--text); display: flex; align-items: center; }
+  .info-val a { color: var(--accent); font-size: 12px; }
+  .info-val span { color: var(--border-strong); }
+
+  .note-row { font-size: 12px; color: var(--text-muted); line-height: 1.55; padding: 8px 10px; background: var(--bg); border-radius: var(--radius-sm); border: 1px solid var(--border); margin-bottom: 10px; }
+  .note-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-faint); margin-bottom: 2px; }
+
+  .btn-inline-edit { background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 11px; font-family: inherit; color: var(--text-faint); padding: 2px 8px; cursor: pointer; }
+  .btn-inline-edit:hover { background: var(--bg); color: var(--text-muted); border-color: var(--border-strong); }
+
+  /* Mobile variant */
+  .mobile-bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-top: 1px solid var(--border); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; user-select: none; }
+  .mobile-bar.has-data { background: var(--surface); color: var(--text-muted); cursor: pointer; }
+  .mobile-bar.has-data:hover { background: #f7f6f3; }
+  .mobile-bar.no-data { background: var(--bg); color: var(--text-faint); font-weight: 400; text-transform: none; letter-spacing: 0; cursor: default; }
+  .mobile-bar .mob-badge { background: var(--accent); color: #fff; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 3px; text-transform: none; letter-spacing: 0; }
+  .mobile-bar .mob-chevron { margin-left: auto; font-size: 10px; transition: transform 0.15s; color: var(--text-faint); }
+  .mobile-bar.open .mob-chevron { transform: rotate(180deg); }
+  .mobile-panel { display: none; border-top: 1px solid var(--border); padding: 14px; background: var(--bg); }
+  .mobile-panel.open { display: block; }
+
+  /* Empty states */
+  .empty { text-align: center; padding: 48px 24px; color: var(--text-faint); font-size: 13px; }
+  .empty-title { font-size: 14px; font-weight: 500; color: var(--text-muted); margin-bottom: 4px; }
+
+  /* Modal */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; z-index: 200; padding: 16px; }
+  .modal-overlay.hidden { display: none; }
+  .modal { background: var(--surface); border-radius: var(--radius); padding: 22px 24px; width: 100%; max-width: 500px; max-height: 90vh; overflow-y: auto; box-shadow: 0 16px 48px rgba(0,0,0,0.18); }
+  .modal h2 { font-size: 16px; font-weight: 700; margin-bottom: 18px; }
+  .modal-divider { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; color: var(--text-faint); margin: 18px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .field { margin-bottom: 12px; }
+  .field label { display: block; font-size: 11px; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.4px; }
+  .field input, .field textarea, .field select { width: 100%; padding: 8px 10px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-family: inherit; font-size: 13px; background: var(--surface); color: var(--text); }
+  .field input:focus, .field textarea:focus, .field select:focus { outline: 2px solid var(--accent-light); border-color: var(--accent); }
+  .field textarea { height: 68px; resize: vertical; }
+  .field .hint { font-size: 11px; color: var(--text-faint); margin-top: 3px; }
+  .modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
+
+  /* Setup modal */
+  .setup-step { display: flex; gap: 10px; margin-bottom: 14px; }
+  .step-num { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-text { font-size: 13px; line-height: 1.6; color: var(--text-muted); }
+  .step-text code { background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 4px; font-size: 11px; color: var(--text); }
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #e74c3c; display: inline-block; margin-right: 6px; vertical-align: middle; }
+  .status-dot.connected { background: #27ae60; }
+
+
+  /* Lightbox */
+  .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 300; display: flex; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
+  .lightbox.hidden { display: none; }
+  .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: var(--radius); box-shadow: 0 24px 64px rgba(0,0,0,0.4); }
+  .lightbox-close { position: fixed; top: 16px; right: 20px; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; opacity: 0.7; line-height: 1; font-family: inherit; }
+  .lightbox-close:hover { opacity: 1; }
+  .img-clickable { cursor: zoom-in; }
+
+  @media (max-width: 600px) {
+    .shell { padding: 16px; }
+    .comp-thumb, .comp-thumb-placeholder { height: 80px; }
+  }
+</style>
+</head>
+<body>
+<div class="shell" id="app"></div>
+<div class="modal-overlay hidden" id="modal-overlay">
+  <div class="modal" id="modal-inner"></div>
+</div>
+
+<script>
+// ─── CONFIGURATION ─────────────────────────────────────────────────────────────
+const CONFIG = {
+  JSONBIN_BIN_ID: '6a10596fee5a733b120076b4',
+  JSONBIN_API_KEY: '$2a$10$0vR/808VysTvLJqBnSI0JOL37qy5HY1Q5h5G26qZmp94mqZGoFwnW'
+};
+// ───────────────────────────────────────────────────────────────────────────────
+
+const COMPONENT_TYPES = [
+  'Header','Navigation','Hero','Banner','Product Grid',
+  'Product Detail','Collection','Footer','Sidebar',
+  'Cart','Checkout','Search','Blog','Gallery','Form','Other'
+];
+
+let state = { view:'gallery', mainView:'by-project', projectId:null, typeName:null, projects:[] };
+const isConfigured = () => CONFIG.JSONBIN_BIN_ID && CONFIG.JSONBIN_API_KEY;
+
+// ── Storage ────────────────────────────────────────────────────────────────────
+async function loadData() {
+  if (!isConfigured()) { state.projects = getSeedData(); return; }
+  try {
+    const r = await fetch(`https://api.jsonbin.io/v3/b/${CONFIG.JSONBIN_BIN_ID}/latest`, { headers:{ 'X-Master-Key': CONFIG.JSONBIN_API_KEY } });
+    const d = await r.json();
+    state.projects = (d.record && d.record.projects) ? d.record.projects : [];
+  } catch(e) { state.projects = []; }
+}
+async function saveData() {
+  if (!isConfigured()) { alert('Please set up JSONBin first — click Setup storage.'); return; }
+  try {
+    await fetch(`https://api.jsonbin.io/v3/b/${CONFIG.JSONBIN_BIN_ID}`, {
+      method:'PUT', headers:{ 'Content-Type':'application/json', 'X-Master-Key': CONFIG.JSONBIN_API_KEY },
+      body: JSON.stringify({ projects: state.projects })
+    });
+  } catch(e) { alert('Could not save. Check your internet connection.'); }
+}
+
+// ── Seed data ──────────────────────────────────────────────────────────────────
+function getSeedData() {
+  return [
+    { id:'p1', name:'Nordvik Outdoor', url:'https://nordvik-outdoor.example.com', jira:'https://acme.atlassian.net/browse/WEB-104', screenshot:'',
+      components:[
+        { id:'c1', name:'Site header', type:'Header', screenshot:'', github:'https://github.com/acme/nordvik/blob/main/snippets/header.liquid', xml:'https://github.com/acme/nordvik/blob/main/sections/header.xml', figma:'https://figma.com/file/abc123', notes:'Sticky on scroll. Do not remove z-index:50 on the nav wrapper.', mobile:{ github:'https://github.com/acme/nordvik/blob/main/snippets/header-mobile.liquid', xml:'https://github.com/acme/nordvik/blob/main/sections/header-mobile.xml', screenshot:'', notes:'Hamburger menu icon set via theme settings. Collapses to single row under 768px.' } },
+        { id:'c2', name:'Hero banner', type:'Hero', screenshot:'', github:'https://github.com/acme/nordvik/blob/main/snippets/hero.liquid', xml:'https://github.com/acme/nordvik/blob/main/sections/hero.xml', figma:'https://figma.com/file/abc123', notes:'Video must be under 5 MB or it breaks on Safari.', mobile:null },
+        { id:'c3', name:'Product grid', type:'Product Grid', screenshot:'', github:'https://github.com/acme/nordvik/blob/main/snippets/product-grid.liquid', xml:'', figma:'', notes:'3-col desktop, 1-col mobile. Lazy load enabled — do not disable.', mobile:null },
+        { id:'c4', name:'Footer', type:'Footer', screenshot:'', github:'https://github.com/acme/nordvik/blob/main/snippets/footer.liquid', xml:'', figma:'', notes:'Newsletter linked to Klaviyo list ID 3f9a. Update in theme settings.', mobile:null }
+      ]
+    },
+    { id:'p2', name:'Marta & Co. Studio', url:'https://marta-co.example.com', jira:'https://acme.atlassian.net/browse/WEB-87', screenshot:'',
+      components:[
+        { id:'c5', name:'Navigation', type:'Navigation', screenshot:'', github:'https://github.com/acme/marta/blob/main/snippets/nav.liquid', xml:'', figma:'https://figma.com/file/xyz789', notes:'Full-screen overlay on mobile. CSS-only, no JS needed.', mobile:{ github:'https://github.com/acme/marta/blob/main/snippets/nav-mobile.liquid', xml:'', screenshot:'', notes:'Overlay triggered by .nav-open class on body. Do not remove.' } },
+        { id:'c6', name:'Full-bleed hero', type:'Hero', screenshot:'', github:'https://github.com/acme/marta/blob/main/snippets/hero.liquid', xml:'', figma:'', notes:'Image set via metafield, not theme settings.', mobile:null },
+        { id:'c7', name:'Site footer', type:'Footer', screenshot:'', github:'https://github.com/acme/marta/blob/main/snippets/footer.liquid', xml:'', figma:'', notes:'', mobile:null }
+      ]
+    },
+    { id:'p3', name:'Greystone Supplements', url:'https://greystone.example.com', jira:'https://acme.atlassian.net/browse/WEB-121', screenshot:'',
+      components:[
+        { id:'c8', name:'Mega nav header', type:'Header', screenshot:'', github:'https://github.com/acme/greystone/blob/main/snippets/mega-nav.liquid', xml:'', figma:'', notes:'Custom menu must be named "mega-nav" in Navigation settings. Do not rename.', mobile:{ github:'https://github.com/acme/greystone/blob/main/snippets/mega-nav-mobile.liquid', xml:'https://github.com/acme/greystone/blob/main/sections/mega-nav-mobile.xml', screenshot:'', notes:'Drawer-style nav. Max 2 levels deep — third level collapses into parent.' } },
+        { id:'c9', name:'Product detail page', type:'Product Detail', screenshot:'', github:'https://github.com/acme/greystone/blob/main/templates/product.liquid', xml:'', figma:'', notes:'Do not modify data-recharge attributes on the form.', mobile:null }
+      ]
+    }
+  ];
+}
+
+// ── Helpers ────────────────────────────────────────────────────────────────────
+function uid() { return Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
+function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
+function dash() { return '<span style="color:var(--border-strong)">—</span>'; }
+function linkOrDash(url, label) { return url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)} ↗</a>` : dash(); }
+function hasMobile(c) { return c.mobile && (c.mobile.github || c.mobile.xml || c.mobile.screenshot || c.mobile.notes); }
+
+function configBanner() {
+  if (isConfigured()) return '';
+  return `<div class="config-banner"><strong>Demo mode</strong> — data is not being saved. Click <strong>Setup storage</strong> above to connect your team's shared storage.</div>`;
+}
+
+function placeholderSVG() {
+  return `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`;
+}
+
+function getAllTypes() {
+  const set = new Set();
+  state.projects.forEach(p => (p.components||[]).forEach(c => { if (c.type) set.add(c.type); }));
+  return [...set].sort();
+}
+function getComponentsByType(t) {
+  const out = [];
+  state.projects.forEach(p => (p.components||[]).forEach(c => { if (c.type===t) out.push({...c, _pid:p.id, _pname:p.name}); }));
+  return out;
+}
+
+// ── Render ─────────────────────────────────────────────────────────────────────
+function render() {
+  const el = document.getElementById('app');
+  if (state.view==='gallery') el.innerHTML = buildGallery();
+  else if (state.view==='project-detail') el.innerHTML = buildProjectDetail();
+  else if (state.view==='type-detail') el.innerHTML = buildTypeDetail();
+}
+
+function buildGallery() {
+  const byProj = state.mainView==='by-project';
+  const types = getAllTypes();
+  const totalComps = state.projects.reduce((n,p)=>n+(p.components||[]).length,0);
+
+  let content = '';
+  if (byProj) {
+    content = state.projects.length===0
+      ? `<div class="empty"><div class="empty-title">No projects yet</div>Click Add project to get started.</div>`
+      : `<div class="card-grid">${state.projects.map(p=>`
+          <div class="gallery-card" onclick="goProjectDetail('${p.id}')">
+            ${p.screenshot ? `<img class="card-thumb" src="${esc(p.screenshot)}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="card-thumb-placeholder" style="display:none">${placeholderSVG()}</div>` : `<div class="card-thumb-placeholder">${placeholderSVG()}</div>`}
+            <div class="card-body">
+              <div class="card-title">${esc(p.name)}</div>
+              <div class="card-meta">${(p.components||[]).length} component${(p.components||[]).length!==1?'s':''}</div>
+              ${(p.url||p.jira)?`<div class="card-tags-row"><span class="card-tags-label">Links</span><div class="card-tags">${p.url?`<a class="tag" href="${esc(p.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Site</a>`:''} ${p.jira?`<a class="tag" href="${esc(p.jira)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Jira</a>`:''}</div></div>`:''}
+            </div>
+          </div>`).join('')}</div>`;
+  } else {
+    content = types.length===0
+      ? `<div class="empty"><div class="empty-title">No types yet</div>Add components and assign them a type to see them grouped here.</div>`
+      : `<div class="card-grid">${types.map(t=>{
+          const comps = getComponentsByType(t);
+          const cover = comps.find(c=>c.screenshot);
+          const projects = [...new Set(comps.map(c=>c._pname))];
+          return `
+            <div class="gallery-card" onclick="goTypeDetail('${esc(t)}')">
+              ${cover ? `<img class="card-thumb" src="${esc(cover.screenshot)}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="card-thumb-placeholder" style="display:none">${placeholderSVG()}</div>` : `<div class="card-thumb-placeholder">${placeholderSVG()}</div>`}
+              <div class="card-body">
+                <div class="card-title">${esc(t)}</div>
+                <div class="card-meta">${comps.length} component${comps.length!==1?'s':''} · ${projects.length} project${projects.length!==1?'s':''}</div>
+                <div class="card-tags">${projects.slice(0,3).map(n=>`<span class="tag">${esc(n)}</span>`).join('')}${projects.length>3?`<span class="tag">+${projects.length-3} more</span>`:''}</div>
+              </div>
+            </div>`;
+        }).join('')}</div>`;
+  }
+
+  return `
+    ${configBanner()}
+    <div class="topbar">
+      <h1>Project Library</h1>
+      <div class="topbar-right">
+        <button class="btn btn-sm" onclick="openSetup()">Setup storage</button>
+        ${byProj?`<button class="btn btn-primary" onclick="openAddProject()">+ Add project</button>`:''}
+      </div>
+    </div>
+    <div class="toolbar">
+      <div class="view-toggle">
+        <button class="${byProj?'active':''}" onclick="setMainView('by-project')">By project</button>
+        <button class="${!byProj?'active':''}" onclick="setMainView('by-type')">By type</button>
+      </div>
+      <span class="toolbar-count">${byProj ? `${state.projects.length} project${state.projects.length!==1?'s':''}` : `${types.length} type${types.length!==1?'s':''} · ${totalComps} components`}</span>
+    </div>
+    ${content}`;
+}
+
+function buildProjectDetail() {
+  const p = state.projects.find(x=>x.id===state.projectId); if (!p) return '';
+  const comps = p.components||[];
+  return `
+    ${configBanner()}
+    <button class="back-btn" onclick="goGallery()">&#8592; All projects</button>
+    <div class="detail-header">
+      <div>
+        <div class="detail-title">${esc(p.name)}</div>
+        <div class="detail-tags">
+          ${p.url?`<a class="tag" href="${esc(p.url)}" target="_blank" rel="noopener">Live site</a>`:''}
+          ${p.jira?`<a class="tag" href="${esc(p.jira)}" target="_blank" rel="noopener">Jira ticket</a>`:''}
+        </div>
+      </div>
+      <div class="detail-actions">
+        <button class="btn btn-sm" onclick="openEditProject('${p.id}')">Edit</button>
+        <button class="btn btn-sm btn-danger" onclick="deleteProject('${p.id}')">Delete</button>
+      </div>
+    </div>
+    ${p.screenshot ? `<img class="cover-img img-clickable" src="${esc(p.screenshot)}" alt="" onclick="openLightbox('${esc(p.screenshot)}')" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cover-placeholder" style="display:none">${placeholderSVG()}</div>` : `<div class="cover-placeholder">${placeholderSVG()}</div>`}
+    <div class="section-bar">
+      <span class="section-label">Components (${comps.length})</span>
+      <button class="btn btn-sm btn-primary" onclick="openAddComponent('${p.id}')">+ Add component</button>
+    </div>
+    ${comps.length===0 ? `<div class="empty"><div class="empty-title">No components yet</div>Add a screenshot and links for each section of this site.</div>` : `<div class="comp-list">${comps.map(c=>buildCompRow(c,p.id,{showProject:false})).join('')}</div>`}`;
+}
+
+function buildTypeDetail() {
+  const comps = getComponentsByType(state.typeName);
+  const projCount = [...new Set(comps.map(c=>c._pname))].length;
+  return `
+    ${configBanner()}
+    <button class="back-btn" onclick="goGallery()">&#8592; All types</button>
+    <div class="detail-header">
+      <div>
+        <div class="detail-title">${esc(state.typeName)}</div>
+        <div class="detail-subtitle">${comps.length} component${comps.length!==1?'s':''} across ${projCount} project${projCount!==1?'s':''}</div>
+      </div>
+    </div>
+    <div class="section-bar" style="margin-top:4px">
+      <span class="section-label">All ${esc(state.typeName)} components</span>
+    </div>
+    ${comps.length===0 ? `<div class="empty"><div class="empty-title">No components of this type yet</div></div>` : `<div class="comp-list">${comps.map(c=>buildCompRow(c,c._pid,{showProject:true})).join('')}</div>`}`;
+}
+
+function buildCompRow(c, pid, opts) {
+  const showProject = opts&&opts.showProject;
+  const mob = hasMobile(c);
+  const rid = 'mob-'+c.id;
+  return `
+    <div class="comp-row">
+      <div class="comp-row-main">
+        ${c.screenshot ? `<img class="comp-thumb img-clickable" src="${esc(c.screenshot)}" alt="" onclick="openLightbox('${esc(c.screenshot)}')" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="comp-thumb-placeholder" style="display:none">${placeholderSVG()}</div>` : `<div class="comp-thumb-placeholder">${placeholderSVG()}</div>`}
+        <div class="comp-header">
+          <div class="comp-name">${esc(c.name)}</div>
+          <button class="btn-inline-edit" onclick="openEditComponent('${pid}','${c.id}')">Edit</button>
+        </div>
+        ${showProject ? `<div class="comp-project-ref" onclick="event.stopPropagation();goProjectDetail('${c._pid}')">${esc(c._pname)} ↗</div>` : ''}
+        ${c.type ? `<div class="card-tags-row" style="margin-bottom:10px"><span class="card-tags-label">Type</span><div class="comp-type-tag" style="margin-bottom:0">${esc(c.type)}</div></div>` : ''}
+        <div class="info-rows">
+          <div class="info-row"><span class="info-key">Code</span><span class="info-val">${linkOrDash(c.github,'GitHub snippet')}</span></div>
+          <div class="info-row"><span class="info-key">XML</span><span class="info-val">${linkOrDash(c.xml,'Component file')}</span></div>
+          <div class="info-row"><span class="info-key">Figma</span><span class="info-val">${linkOrDash(c.figma,'Figma page')}</span></div>
+        </div>
+        ${c.notes ? `<div class="note-row"><div class="note-label">Notes</div>${esc(c.notes)}</div>` : ''}
+
+      </div>
+      <div class="mobile-bar ${mob?'has-data':'no-data'}" id="toggle-${rid}" ${mob?`onclick="toggleMobile('${rid}')"`:''}>${mob ? `Mobile variant <span class="mob-badge">Has data</span><span class="mob-chevron">&#9660;</span>` : `No mobile variant`}</div>
+      <div class="mobile-panel" id="panel-${rid}">
+        ${c.mobile&&c.mobile.screenshot ? `<img class="comp-thumb img-clickable" src="${esc(c.mobile.screenshot)}" alt="" onclick="openLightbox('${esc(c.mobile.screenshot)}')" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="comp-thumb-placeholder" style="display:none">${placeholderSVG()}</div>` : ''}
+        <div class="info-rows">
+          <div class="info-row"><span class="info-key">Code</span><span class="info-val">${linkOrDash(c.mobile&&c.mobile.github,'GitHub snippet')}</span></div>
+          <div class="info-row"><span class="info-key">XML</span><span class="info-val">${linkOrDash(c.mobile&&c.mobile.xml,'Component file')}</span></div>
+        </div>
+        ${c.mobile&&c.mobile.notes ? `<div class="note-row" style="margin-top:8px"><div class="note-label">Notes</div>${esc(c.mobile.notes)}</div>` : ''}
+      </div>
+    </div>`;
+}
+
+function toggleMobile(rid) {
+  document.getElementById('toggle-'+rid).classList.toggle('open');
+  document.getElementById('panel-'+rid).classList.toggle('open');
+}
+
+// ── Navigation ─────────────────────────────────────────────────────────────────
+function goGallery() { state.view='gallery'; render(); }
+function goProjectDetail(pid) { state.view='project-detail'; state.projectId=pid; render(); }
+function goTypeDetail(t) { state.view='type-detail'; state.typeName=t; render(); }
+function setMainView(v) { state.mainView=v; state.view='gallery'; render(); }
+
+// ── Modals ─────────────────────────────────────────────────────────────────────
+function showModal(html) { document.getElementById('modal-inner').innerHTML=html; document.getElementById('modal-overlay').classList.remove('hidden'); }
+function closeModal() { document.getElementById('modal-overlay').classList.add('hidden'); }
+document.getElementById('modal-overlay').addEventListener('click', e=>{ if(e.target.id==='modal-overlay') closeModal(); });
+
+function typeSelectHTML(sel) {
+  const isCustom = sel && !COMPONENT_TYPES.includes(sel);
+  return `<div class="field"><label>Component type</label>
+    <select id="c-type-select" onchange="handleTypeChange()">
+      <option value="">— choose a type —</option>
+      ${COMPONENT_TYPES.map(t=>`<option value="${esc(t)}" ${sel===t?'selected':''}>${esc(t)}</option>`).join('')}
+      <option value="__custom__" ${isCustom?'selected':''}>Custom…</option>
+    </select>
+    <input id="c-type-custom" placeholder="Type a custom name…" style="margin-top:5px;display:${isCustom?'block':'none'}" value="${isCustom?esc(sel):''}"/>
+    <div class="hint">Pick from the list or choose Custom to enter your own.</div>
+  </div>`;
+}
+function handleTypeChange() {
+  const s = document.getElementById('c-type-select'), i = document.getElementById('c-type-custom');
+  i.style.display = s.value==='__custom__' ? 'block' : 'none';
+  if (s.value==='__custom__') i.focus();
+}
+function getTypeVal() {
+  const s = document.getElementById('c-type-select').value;
+  return s==='__custom__' ? document.getElementById('c-type-custom').value.trim() : s;
+}
+
+function compFormHTML(c) {
+  const m = (c&&c.mobile)||{};
+  return `
+    <div class="modal-divider">Desktop / Default</div>
+    <div class="field"><label>Component name *</label><input id="c-name" value="${esc(c&&c.name||'')}" placeholder="e.g. Site header"/></div>
+    ${typeSelectHTML(c&&c.type||'')}
+    <div class="field"><label>Screenshot URL</label><input id="c-ss" value="${esc(c&&c.screenshot||'')}" placeholder="https://..."/><div class="hint">Right-click any screenshot image → Copy image address.</div></div>
+    <div class="field"><label>GitHub code snippet URL</label><input id="c-github" value="${esc(c&&c.github||'')}" placeholder="https://github.com/..."/></div>
+    <div class="field"><label>XML / component file URL</label><input id="c-xml" value="${esc(c&&c.xml||'')}" placeholder="https://..."/></div>
+    <div class="field"><label>Figma URL</label><input id="c-figma" value="${esc(c&&c.figma||'')}" placeholder="https://figma.com/..."/></div>
+    <div class="field"><label>Notes</label><textarea id="c-notes" placeholder="Usage tips, gotchas, warnings…">${esc(c&&c.notes||'')}</textarea></div>
+    <div class="modal-divider">Mobile variant <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:11px">(optional)</span></div>
+    <div class="field"><label>Mobile screenshot URL</label><input id="m-ss" value="${esc(m.screenshot||'')}" placeholder="https://..."/></div>
+    <div class="field"><label>Mobile code snippet URL</label><input id="m-github" value="${esc(m.github||'')}" placeholder="https://github.com/..."/></div>
+    <div class="field"><label>Mobile XML / component file URL</label><input id="m-xml" value="${esc(m.xml||'')}" placeholder="https://..."/></div>
+    <div class="field"><label>Mobile notes</label><textarea id="m-notes" placeholder="Breakpoints, mobile-specific gotchas…">${esc(m.notes||'')}</textarea></div>`;
+}
+function getMobileVal() {
+  const ss=document.getElementById('m-ss').value.trim(), github=document.getElementById('m-github').value.trim(), xml=document.getElementById('m-xml').value.trim(), notes=document.getElementById('m-notes').value.trim();
+  if (!ss&&!github&&!xml&&!notes) return null;
+  return {screenshot:ss,github,xml,notes};
+}
+
+function openAddComponent(pid) {
+  showModal(`<h2>Add component</h2>${compFormHTML(null)}<div class="modal-actions"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="saveNewComponent('${pid}')">Add component</button></div>`);
+}
+async function saveNewComponent(pid) {
+  const p=state.projects.find(x=>x.id===pid); if(!p) return;
+  const name=document.getElementById('c-name').value.trim(); if(!name){alert('Please enter a component name.');return;}
+  const c={id:uid(),name,type:getTypeVal(),screenshot:document.getElementById('c-ss').value.trim(),github:document.getElementById('c-github').value.trim(),xml:document.getElementById('c-xml').value.trim(),figma:document.getElementById('c-figma').value.trim(),notes:document.getElementById('c-notes').value.trim(),mobile:getMobileVal()};
+  if(!p.components)p.components=[];
+  p.components.push(c); await saveData(); closeModal(); render();
+}
+function openEditComponent(pid,cid) {
+  const p=state.projects.find(x=>x.id===pid), c=p&&p.components.find(x=>x.id===cid); if(!c) return;
+  showModal(`<h2>Edit component</h2>${compFormHTML(c)}<div class="modal-actions"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="saveEditComponent('${pid}','${cid}')">Save changes</button></div>`);
+}
+async function saveEditComponent(pid,cid) {
+  const p=state.projects.find(x=>x.id===pid), c=p&&p.components.find(x=>x.id===cid); if(!c) return;
+  const name=document.getElementById('c-name').value.trim(); if(!name){alert('Please enter a name.');return;}
+  c.name=name; c.type=getTypeVal(); c.screenshot=document.getElementById('c-ss').value.trim(); c.github=document.getElementById('c-github').value.trim(); c.xml=document.getElementById('c-xml').value.trim(); c.figma=document.getElementById('c-figma').value.trim(); c.notes=document.getElementById('c-notes').value.trim(); c.mobile=getMobileVal();
+  await saveData(); closeModal(); render();
+}
+async function deleteComponent(pid,cid) {
+  if(!confirm('Remove this component?'))return;
+  const p=state.projects.find(x=>x.id===pid); if(!p)return;
+  p.components=p.components.filter(x=>x.id!==cid); await saveData(); render();
+}
+
+function openAddProject() {
+  showModal(`<h2>Add project</h2>
+    <div class="field"><label>Project name *</label><input id="f-name" placeholder="e.g. Acme Online Store"/></div>
+    <div class="field"><label>Website URL</label><input id="f-url" placeholder="https://..."/></div>
+    <div class="field"><label>Jira ticket URL</label><input id="f-jira" placeholder="https://yourteam.atlassian.net/browse/..."/></div>
+    <div class="field"><label>Cover screenshot URL</label><input id="f-ss" placeholder="https://..."/><div class="hint">Right-click any image → Copy image address.</div></div>
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="saveNewProject()">Add project</button></div>`);
+}
+async function saveNewProject() {
+  const name=document.getElementById('f-name').value.trim(); if(!name){alert('Please enter a project name.');return;}
+  const p={id:uid(),name,url:document.getElementById('f-url').value.trim(),jira:document.getElementById('f-jira').value.trim(),screenshot:document.getElementById('f-ss').value.trim(),components:[]};
+  state.projects.unshift(p); await saveData(); closeModal(); render();
+}
+function openEditProject(pid) {
+  const p=state.projects.find(x=>x.id===pid); if(!p)return;
+  showModal(`<h2>Edit project</h2>
+    <div class="field"><label>Project name *</label><input id="f-name" value="${esc(p.name)}"/></div>
+    <div class="field"><label>Website URL</label><input id="f-url" value="${esc(p.url||'')}"/></div>
+    <div class="field"><label>Jira ticket URL</label><input id="f-jira" value="${esc(p.jira||'')}"/></div>
+    <div class="field"><label>Cover screenshot URL</label><input id="f-ss" value="${esc(p.screenshot||'')}"/></div>
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="saveEditProject('${pid}')">Save changes</button></div>`);
+}
+async function saveEditProject(pid) {
+  const p=state.projects.find(x=>x.id===pid); if(!p)return;
+  const name=document.getElementById('f-name').value.trim(); if(!name){alert('Please enter a name.');return;}
+  p.name=name; p.url=document.getElementById('f-url').value.trim(); p.jira=document.getElementById('f-jira').value.trim(); p.screenshot=document.getElementById('f-ss').value.trim();
+  await saveData(); closeModal(); render();
+}
+async function deleteProject(pid) {
+  if(!confirm('Delete this project and all its components?'))return;
+  state.projects=state.projects.filter(x=>x.id!==pid); await saveData(); state.view='gallery'; render();
+}
+
+function openSetup() {
+  const ok=isConfigured();
+  showModal(`<h2>Setup storage</h2>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:18px;line-height:1.6">This app saves data to a free service called <strong>JSONBin</strong> — a small online storage box shared by your whole team. Follow these steps once.</p>
+    <div class="setup-step"><div class="step-num">1</div><div class="step-text">Go to <a href="https://jsonbin.io" target="_blank">jsonbin.io</a> and create a free account.</div></div>
+    <div class="setup-step"><div class="step-num">2</div><div class="step-text">Click <strong>API Keys</strong> in the left menu and copy your <strong>Master Key</strong> (starts with <code>$2a$10$...</code>).</div></div>
+    <div class="setup-step"><div class="step-num">3</div><div class="step-text">Click <strong>Bins → Create a bin</strong>. Paste in <code>{"projects":[]}</code>, save it, and copy the <strong>Bin ID</strong> from the URL.</div></div>
+    <div class="setup-step"><div class="step-num">4</div><div class="step-text">Open <strong>project-library.html</strong> in Notepad. Find the two lines near the top: <code>JSONBIN_BIN_ID: '',</code> and <code>JSONBIN_API_KEY: ''</code>. Paste your values inside the quotes, save the file, and share it with your team.</div></div>
+    <div style="background:${ok?'#eafaf1':'var(--bg)'};border:1px solid ${ok?'#a9dfbf':'var(--border)'};border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;margin-top:6px;color:var(--text-muted)">
+      <span class="status-dot ${ok?'connected':''}"></span>${ok?'<strong>Connected</strong> — data is being saved and shared.':'<strong>Not connected yet</strong> — showing demo data only.'}
+    </div>
+    <div class="modal-actions"><button class="btn btn-primary" onclick="closeModal()">Got it</button></div>`);
+}
+
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.add('hidden');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+loadData().then(render);
+</script>
+<div class="lightbox hidden" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+</body>
+</html>
