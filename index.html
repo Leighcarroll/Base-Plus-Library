@@ -178,8 +178,8 @@
 <script>
 // ─── CONFIGURATION ─────────────────────────────────────────────────────────────
 const CONFIG = {
-  JSONBIN_BIN_ID: '6a10596fee5a733b120076b4',
-  JSONBIN_API_KEY: '$2a$10$0vR/808VysTvLJqBnSI0JOL37qy5HY1Q5h5G26qZmp94mqZGoFwnW'
+  JSONBIN_BIN_ID: '',
+  JSONBIN_API_KEY: ''
 };
 // ───────────────────────────────────────────────────────────────────────────────
 
@@ -535,7 +535,7 @@ function openSetup() {
     <div class="setup-step"><div class="step-num">1</div><div class="step-text">Go to <a href="https://jsonbin.io" target="_blank">jsonbin.io</a> and create a free account.</div></div>
     <div class="setup-step"><div class="step-num">2</div><div class="step-text">Click <strong>API Keys</strong> in the left menu and copy your <strong>Master Key</strong> (starts with <code>$2a$10$...</code>).</div></div>
     <div class="setup-step"><div class="step-num">3</div><div class="step-text">Click <strong>Bins → Create a bin</strong>. Paste in <code>{"projects":[]}</code>, save it, and copy the <strong>Bin ID</strong> from the URL.</div></div>
-    <div class="setup-step"><div class="step-num">4</div><div class="step-text">Open <strong>project-library.html</strong> in Notepad. Find the two lines near the top: <code>JSONBIN_BIN_ID: '',</code> and <code>JSONBIN_API_KEY: ''</code>. Paste your values inside the quotes, save the file, and share it with your team.</div></div>
+    <div class="setup-step"><div class="step-num">4</div><div class="step-text">Open <strong>project-library.html</strong> in Notepad. Find the two lines near the top: <code>JSONBIN_BIN_ID: '',</code> and <code>JSONBIN_API_KEY: ''</code>. Paste your values inside the quotes, save the file, and share it with your team privately. Do not commit or publish a configured copy with the Master Key included.</div></div>
     <div style="background:${ok?'#eafaf1':'var(--bg)'};border:1px solid ${ok?'#a9dfbf':'var(--border)'};border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;margin-top:6px;color:var(--text-muted)">
       <span class="status-dot ${ok?'connected':''}"></span>${ok?'<strong>Connected</strong> — data is being saved and shared.':'<strong>Not connected yet</strong> — showing demo data only.'}
     </div>
