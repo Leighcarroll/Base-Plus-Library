@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8'?>
+<epages>
+  <!--export level 1-->
+  <VilkasContentElementFolder Alias='VilkasContentElementsFolder' Position='0' CreationDate='2026-03-23T16:30:29+01:00' Inherit='1'>
+    <VilkasContentElement CssVariableElementBackgroundColor='#FFFFFF' CssVariableElementLinkHoverItalic='0' VilkasDesignProductImageLazyLoad='1' CssVariableElementLinkBold='1' CssVariableElementParagraphItalic='0' CssVariableElementImageAsBackground='0' CssVariableElementLinkHoverBold='1' CreationDate='2026-02-03T11:39:41+01:00' CssVariableElementLinkHoverColor='#6A121E' Inherit='1' CssVariableElementParagraphBold='0' Position='10' CssVariableElementImageAsBackgroundHeight='400px' CssVariableElementHeadlineUnderline='0' DisplayParentProductPager='0' CssVariableElementLinkButtonTextColorHover='#FFFFFF' CssVariableElementOuterMarginTopDesktop='2rem' CssVariableElementLinkButtonBackgroundColor='#b42828' CssVariableElementSmallHeadlineSize='1rem' CssVariableElementPaddingTopDesktop='0' VilkasContentElementUserDefinedClass='usp-mobile-wrapper' CssVariableElementLinkUnderline='0' CssVariableElementOuterMarginBottomDesktop='2rem' IsVisible='0' CssVariableElementLinkButtonBorderColorHover='#6A121E' CssVariableElementLinkButtonBorderColor='#b42828' CssVariableElementParagraphColor='#1D1D1A' CssVariableElementPaddingBottom='0' ImageSliderOptions='{&quot;slidesPerView&quot;:1,&quot;speed&quot;:300,&quot;effect&quot;:&quot;slide&quot;,&quot;pagination&quot;:false,&quot;autoplay&quot;:{&quot;delay&quot;:3001,&quot;disableOnInteraction&quot;:false},&quot;lazy&quot;:{&quot;loadPrevNext&quot;:true},&quot;loop&quot;:true}' Alias='ContentElement_1' VilkasDesignProductLayoutNumberofColumns='0' CssVariableElementSmallHeadlineColor='#1D1D1A' Name='Text' CssVariableElementLinkButtonBorder='1px solid' PreviousType='Generic' CssVariableElementPaddingBottomDesktop='0' CssVariableElementLinkHoverUnderline='0' TextPosition='2' Type='ImageSlider' CssVariableElementParagraphSize='1rem' CssVariableElementLinkButtonBorderRadius='3px' CssVariableElementHeadlineSize='1.5rem' CssVariableElementPaddingTop='0' CssVariableElementHeadlineItalic='0' VilkasContentElementDisplayOnCategory='0' CssVariableElementLinkButtonTextColor='#FFFFFF' CssVariableElementParagraphUnderline='0' UseWYSIWYG='1' CssVariableElementRowBackgroundColor='#FFFFFF' CssVariableElementSmallHeadlineBold='0' CssVariableElementOuterMarginBottom='1rem' CssVariableElementLinkItalic='0' CssVariableElementFullWidth='0' CssVariableElementOuterMarginTop='1rem' CssVariableElementSliderTextOnTop='0' CssVariableElementLinkSize='1rem' CssVariableElementFullWidthInnerBoxed='0' PreDefImageSliderOptionAlias='custom' CssVariableElementLinkColor='#b42828' CssVariableElementSmallHeadlineUnderline='0' CssVariableElementImageAsBackgroundHeightDesktop='500px' CssVariableElementSmallHeadlineItalic='0' CssVariableElementLinkButtonBackgroundColorHover='#6A121E' CssVariableElementLinkButtonPadding='0.5rem 1.5rem' CssVariableElementHeadlineColor='#1D1D1A' CssVariableElementHeadlineBold='1'>
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='cat' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ces' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='dan' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='dut' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='eng' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='fin' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='fre' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ger' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ita' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='nor' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='por' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='rus' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='spa' />
+      <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='swe' />
+      <VilkasContentElementFolder CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' Alias='VilkasContentElementsFolder'>
+        <VilkasContentElement CssVariableElementBackgroundColor='#FFFFFF' CssVariableElementLinkHoverItalic='0' VilkasDesignProductImageLazyLoad='1' CssVariableElementLinkBold='1' CssVariableElementParagraphItalic='0' CssVariableElementImageAsBackground='0' CssVariableElementLinkHoverBold='1' CreationDate='2026-02-03T11:39:42+01:00' CssVariableElementLinkHoverColor='#6A121E' Inherit='1' CssVariableElementParagraphBold='0' Position='10' CssVariableElementImageAsBackgroundHeight='400px' CssVariableElementHeadlineUnderline='0' DisplayParentProductPager='0' CssVariableElementLinkButtonTextColorHover='#FFFFFF' CssVariableElementOuterMarginTopDesktop='2rem' CssVariableElementLinkButtonBackgroundColor='#b42828' CssVariableElementSmallHeadlineSize='1rem' CssVariableElementPaddingTopDesktop='0' CssVariableElementOuterMarginBottomDesktop='2rem' CssVariableElementLinkUnderline='0' IsVisible='1' CssVariableElementLinkButtonBorderColorHover='#6A121E' CssVariableElementLinkButtonBorderColor='#b42828' CssVariableElementParagraphColor='#1D1D1A' CssVariableElementPaddingBottom='0' Alias='ContentElement_1' VilkasDesignProductLayoutNumberofColumns='0' CssVariableElementSmallHeadlineColor='#1D1D1A' Name='Abbildung 1' CssVariableElementLinkButtonBorder='1px solid' PreviousType='Generic' CssVariableElementPaddingBottomDesktop='0' CssVariableElementLinkHoverUnderline='0' TextPosition='2' CssVariableElementParagraphSize='1rem' Type='Image' CssVariableElementLinkButtonBorderRadius='3px' CssVariableElementHeadlineSize='1.5rem' CssVariableElementPaddingTop='0' CssVariableElementHeadlineItalic='0' VilkasContentElementDisplayOnCategory='0' CssVariableElementLinkButtonTextColor='#FFFFFF' CssVariableElementParagraphUnderline='0' UseWYSIWYG='1' CssVariableElementRowBackgroundColor='#FFFFFF' CssVariableElementOuterMarginBottom='1rem' CssVariableElementSmallHeadlineBold='0' CssVariableElementLinkItalic='0' CssVariableElementFullWidth='0' CssVariableElementOuterMarginTop='1rem' CssVariableElementSliderTextOnTop='0' CssVariableElementLinkSize='1rem' CssVariableElementFullWidthInnerBoxed='0' CssVariableElementLinkColor='#b42828' CssVariableElementSmallHeadlineUnderline='0' CssVariableElementImageAsBackgroundHeightDesktop='500px' CssVariableElementSmallHeadlineItalic='0' CssVariableElementLinkButtonBackgroundColorHover='#6A121E' CssVariableElementLinkButtonPadding='0.5rem 1.5rem' CssVariableElementHeadlineBold='1' CssVariableElementHeadlineColor='#1D1D1A'>
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='cat' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ces' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='dan' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='dut' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='eng' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='fin' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='fre' />
+          <AttributeLanguage Text='&lt;p&gt;&lt;img src=&quot;/WebRoot/Store4/Shops/62173412/MediaGallery/baseplus/USP-icons/sonderlote-check-blue.svg&quot; width=&quot;24&quot;&gt; &amp;nbsp;Kleine Mengen möglich&lt;/p&gt;' TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ger' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ita' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='nor' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='por' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='rus' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='spa' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='swe' />
+          <Object CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' Alias='VilkasContentElementsImageFolder '>
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='ca' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='cs' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='da' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' ImageHeight='1' LazyLoad='1' Image='Image.png' Alias='de' ImageWidth='1' Language='de' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='en' Language='en' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='es' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='fi' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='fr' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='it' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='nl' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='no' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='pt' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='ru' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='sv' />
+          </Object>
+          <VilkasContentElementFolder CreationDate='2026-03-23T16:30:30+01:00' Inherit='1' Position='0' Alias='VilkasContentElementsFolder' />
+        </VilkasContentElement>
+        <VilkasContentElement CssVariableElementBackgroundColor='#FFFFFF' CssVariableElementLinkHoverItalic='0' VilkasDesignProductImageLazyLoad='1' CssVariableElementLinkBold='1' CssVariableElementParagraphItalic='0' CssVariableElementImageAsBackground='0' CssVariableElementLinkHoverBold='1' CreationDate='2026-02-03T11:39:42+01:00' CssVariableElementLinkHoverColor='#6A121E' Inherit='1' CssVariableElementParagraphBold='0' Position='20' CssVariableElementImageAsBackgroundHeight='400px' CssVariableElementHeadlineUnderline='0' DisplayParentProductPager='0' CssVariableElementLinkButtonTextColorHover='#FFFFFF' CssVariableElementOuterMarginTopDesktop='2rem' CssVariableElementLinkButtonBackgroundColor='#b42828' CssVariableElementSmallHeadlineSize='1rem' CssVariableElementPaddingTopDesktop='0' CssVariableElementOuterMarginBottomDesktop='2rem' CssVariableElementLinkUnderline='0' IsVisible='1' CssVariableElementLinkButtonBorderColorHover='#6A121E' CssVariableElementLinkButtonBorderColor='#b42828' CssVariableElementParagraphColor='#1D1D1A' CssVariableElementPaddingBottom='0' Alias='ContentElement_2' VilkasDesignProductLayoutNumberofColumns='0' CssVariableElementSmallHeadlineColor='#1D1D1A' Name='Abbildung 2' CssVariableElementLinkButtonBorder='1px solid' PreviousType='Generic' CssVariableElementPaddingBottomDesktop='0' CssVariableElementLinkHoverUnderline='0' TextPosition='2' CssVariableElementParagraphSize='1rem' Type='Image' CssVariableElementLinkButtonBorderRadius='3px' CssVariableElementHeadlineSize='1.5rem' CssVariableElementPaddingTop='0' CssVariableElementHeadlineItalic='0' VilkasContentElementDisplayOnCategory='0' CssVariableElementLinkButtonTextColor='#FFFFFF' CssVariableElementParagraphUnderline='0' UseWYSIWYG='1' CssVariableElementRowBackgroundColor='#FFFFFF' CssVariableElementOuterMarginBottom='1rem' CssVariableElementSmallHeadlineBold='0' CssVariableElementLinkItalic='0' CssVariableElementFullWidth='0' CssVariableElementOuterMarginTop='1rem' CssVariableElementSliderTextOnTop='0' CssVariableElementLinkSize='1rem' CssVariableElementFullWidthInnerBoxed='0' CssVariableElementLinkColor='#b42828' CssVariableElementSmallHeadlineUnderline='0' CssVariableElementImageAsBackgroundHeightDesktop='500px' CssVariableElementSmallHeadlineItalic='0' CssVariableElementLinkButtonBackgroundColorHover='#6A121E' CssVariableElementLinkButtonPadding='0.5rem 1.5rem' CssVariableElementHeadlineBold='1' CssVariableElementHeadlineColor='#1D1D1A'>
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='cat' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ces' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='dan' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='dut' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='eng' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='fin' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='fre' />
+          <AttributeLanguage Text='&lt;p&gt;&lt;img src=&quot;/WebRoot/Store4/Shops/62173412/MediaGallery/baseplus/USP-icons/sonderlote-truck-03.svg&quot; width=&quot;24&quot;&gt; &amp;nbsp;Versand innerhalb 24h&lt;/p&gt;' TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ger' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ita' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='nor' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='por' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='rus' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='spa' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='swe' />
+          <Object CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' Alias='VilkasContentElementsImageFolder '>
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='ca' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='cs' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='da' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' ImageHeight='1' LazyLoad='1' Image='Image.png' Alias='de' ImageWidth='1' Language='de' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='en' Language='en' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='es' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='fi' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='fr' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='it' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='nl' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='no' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='pt' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='ru' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='sv' />
+          </Object>
+          <VilkasContentElementFolder CreationDate='2026-03-23T16:30:30+01:00' Inherit='1' Position='0' Alias='VilkasContentElementsFolder' />
+        </VilkasContentElement>
+        <VilkasContentElement CssVariableElementBackgroundColor='#FFFFFF' CssVariableElementLinkHoverItalic='0' VilkasDesignProductImageLazyLoad='1' CssVariableElementLinkBold='1' CssVariableElementParagraphItalic='0' CssVariableElementImageAsBackground='0' CssVariableElementLinkHoverBold='1' CreationDate='2026-02-03T11:39:42+01:00' CssVariableElementLinkHoverColor='#6A121E' Inherit='1' CssVariableElementParagraphBold='0' Position='30' CssVariableElementImageAsBackgroundHeight='400px' CssVariableElementHeadlineUnderline='0' DisplayParentProductPager='0' CssVariableElementLinkButtonTextColorHover='#FFFFFF' CssVariableElementOuterMarginTopDesktop='2rem' CssVariableElementLinkButtonBackgroundColor='#b42828' CssVariableElementSmallHeadlineSize='1rem' CssVariableElementPaddingTopDesktop='0' CssVariableElementOuterMarginBottomDesktop='2rem' CssVariableElementLinkUnderline='0' IsVisible='1' CssVariableElementLinkButtonBorderColorHover='#6A121E' CssVariableElementLinkButtonBorderColor='#b42828' CssVariableElementParagraphColor='#1D1D1A' CssVariableElementPaddingBottom='0' Alias='ContentElement_2_4' VilkasDesignProductLayoutNumberofColumns='0' CssVariableElementSmallHeadlineColor='#1D1D1A' Name='Abbildung 2' CssVariableElementLinkButtonBorder='1px solid' PreviousType='Generic' CssVariableElementPaddingBottomDesktop='0' CssVariableElementLinkHoverUnderline='0' TextPosition='2' CssVariableElementParagraphSize='1rem' Type='Image' CssVariableElementLinkButtonBorderRadius='3px' CssVariableElementHeadlineSize='1.5rem' CssVariableElementPaddingTop='0' CssVariableElementHeadlineItalic='0' VilkasContentElementDisplayOnCategory='0' CssVariableElementLinkButtonTextColor='#FFFFFF' CssVariableElementParagraphUnderline='0' UseWYSIWYG='1' CssVariableElementRowBackgroundColor='#FFFFFF' CssVariableElementOuterMarginBottom='1rem' CssVariableElementSmallHeadlineBold='0' CssVariableElementLinkItalic='0' CssVariableElementFullWidth='0' CssVariableElementOuterMarginTop='1rem' CssVariableElementSliderTextOnTop='0' CssVariableElementLinkSize='1rem' CssVariableElementFullWidthInnerBoxed='0' CssVariableElementLinkColor='#b42828' CssVariableElementSmallHeadlineUnderline='0' CssVariableElementImageAsBackgroundHeightDesktop='500px' CssVariableElementSmallHeadlineItalic='0' CssVariableElementLinkButtonBackgroundColorHover='#6A121E' CssVariableElementLinkButtonPadding='0.5rem 1.5rem' CssVariableElementHeadlineBold='1' CssVariableElementHeadlineColor='#1D1D1A'>
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='cat' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ces' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='dan' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='dut' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='eng' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='fin' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='fre' />
+          <AttributeLanguage Text='&lt;p&gt;&lt;img src=&quot;/WebRoot/Store4/Shops/62173412/MediaGallery/baseplus/USP-icons/sonderlote-award-03.svg&quot; width=&quot;24&quot;&gt; &amp;nbsp;Über 25 Jahre Erfahrung&lt;/p&gt;' TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ger' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ita' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='nor' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='por' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='rus' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='spa' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='swe' />
+          <Object CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' Alias='VilkasContentElementsImageFolder '>
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='ca' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='cs' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='da' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' ImageHeight='1' LazyLoad='1' Image='Image.png' Alias='de' ImageWidth='1' Language='de' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='en' Language='en' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='es' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='fi' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='fr' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='it' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='nl' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='no' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='pt' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='ru' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='sv' />
+          </Object>
+          <VilkasContentElementFolder CreationDate='2026-03-23T16:30:30+01:00' Inherit='1' Position='0' Alias='VilkasContentElementsFolder' />
+        </VilkasContentElement>
+        <VilkasContentElement CssVariableElementBackgroundColor='#FFFFFF' CssVariableElementLinkHoverItalic='0' VilkasDesignProductImageLazyLoad='1' CssVariableElementLinkBold='1' CssVariableElementParagraphItalic='0' CssVariableElementImageAsBackground='0' CssVariableElementLinkHoverBold='1' CreationDate='2026-02-03T11:39:42+01:00' CssVariableElementLinkHoverColor='#6A121E' Inherit='1' CssVariableElementParagraphBold='0' Position='40' CssVariableElementImageAsBackgroundHeight='400px' CssVariableElementHeadlineUnderline='0' DisplayParentProductPager='0' CssVariableElementLinkButtonTextColorHover='#FFFFFF' CssVariableElementOuterMarginTopDesktop='2rem' CssVariableElementLinkButtonBackgroundColor='#b42828' CssVariableElementSmallHeadlineSize='1rem' CssVariableElementPaddingTopDesktop='0' CssVariableElementOuterMarginBottomDesktop='2rem' CssVariableElementLinkUnderline='0' IsVisible='1' CssVariableElementLinkButtonBorderColorHover='#6A121E' CssVariableElementLinkButtonBorderColor='#b42828' CssVariableElementParagraphColor='#1D1D1A' CssVariableElementPaddingBottom='0' Alias='ContentElement_3' VilkasDesignProductLayoutNumberofColumns='0' CssVariableElementSmallHeadlineColor='#1D1D1A' Name='Abbildung 3' CssVariableElementLinkButtonBorder='1px solid' PreviousType='Generic' CssVariableElementPaddingBottomDesktop='0' CssVariableElementLinkHoverUnderline='0' TextPosition='2' CssVariableElementParagraphSize='1rem' Type='Image' CssVariableElementLinkButtonBorderRadius='3px' CssVariableElementHeadlineSize='1.5rem' CssVariableElementPaddingTop='0' CssVariableElementHeadlineItalic='0' VilkasContentElementDisplayOnCategory='0' CssVariableElementLinkButtonTextColor='#FFFFFF' CssVariableElementParagraphUnderline='0' UseWYSIWYG='1' CssVariableElementRowBackgroundColor='#FFFFFF' CssVariableElementOuterMarginBottom='1rem' CssVariableElementSmallHeadlineBold='0' CssVariableElementLinkItalic='0' CssVariableElementFullWidth='0' CssVariableElementOuterMarginTop='1rem' CssVariableElementSliderTextOnTop='0' CssVariableElementLinkSize='1rem' CssVariableElementFullWidthInnerBoxed='0' CssVariableElementLinkColor='#b42828' CssVariableElementSmallHeadlineUnderline='0' CssVariableElementImageAsBackgroundHeightDesktop='500px' CssVariableElementSmallHeadlineItalic='0' CssVariableElementLinkButtonBackgroundColorHover='#6A121E' CssVariableElementLinkButtonPadding='0.5rem 1.5rem' CssVariableElementHeadlineBold='1' CssVariableElementHeadlineColor='#1D1D1A'>
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='cat' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ces' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='dan' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='dut' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='eng' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='fin' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='fre' />
+          <AttributeLanguage Text='&lt;p&gt;&lt;img src=&quot;/WebRoot/Store4/Shops/62173412/MediaGallery/baseplus/USP-icons/sonderlote-phone-04.svg&quot; width=&quot;24&quot;&gt; &amp;nbsp;Kostenlose Beratung&lt;/p&gt;' TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ger' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='ita' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='nor' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='por' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='rus' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='spa' />
+          <AttributeLanguage TextFieldTitleSize='h3' TextFieldHeadSize='p' Language='swe' />
+          <Object CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' Alias='VilkasContentElementsImageFolder '>
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='ca' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='cs' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='da' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' ImageHeight='1' LazyLoad='1' Image='Image.png' Alias='de' ImageWidth='1' Language='de' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='en' Language='en' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='es' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='fi' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='fr' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='it' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='nl' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='no' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='pt' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='ru' />
+            <VilkasContentElementImage CreationDate='2026-02-03T11:39:42+01:00' Inherit='1' Position='0' LazyLoad='1' Alias='sv' />
+          </Object>
+          <VilkasContentElementFolder CreationDate='2026-03-23T16:30:30+01:00' Inherit='1' Position='0' Alias='VilkasContentElementsFolder' />
+        </VilkasContentElement>
+      </VilkasContentElementFolder>
+    </VilkasContentElement>
+  </VilkasContentElementFolder>
+</epages>
